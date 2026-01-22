@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
   },
+  // Silence Next 16 Turbopack/Webpack conflict warning
+  turbopack: {},
 };
 
 export default nextConfig;
