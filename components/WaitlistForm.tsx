@@ -38,8 +38,8 @@ export default function WaitlistForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          xHandle: session.user.name, // Or username if available in profile
-          xId: session.user.email, // Using email as proxy ID for now
+          xHandle: session.user?.name, // Or username if available in profile
+          xId: session.user?.email, // Using email as proxy ID for now
           wallet: publicKey.toString(),
         }),
       });
