@@ -24,7 +24,7 @@ export default function Home() {
             <img 
               src="/logo.jpeg" 
               alt="Logo" 
-              className="relative z-10 w-full h-full object-contain"
+              className="relative z-10 w-full h-full object-cover rounded-full"
             />
           </div>
 
