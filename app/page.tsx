@@ -21,11 +21,10 @@ export default function Home() {
           className="text-center space-y-4"
         >
           <div className="mb-8 relative w-32 h-32 mx-auto">
-            <div className="absolute inset-0 bg-brand/20 blur-xl rounded-full" />
             <img 
               src="/logo.jpeg" 
               alt="Logo" 
-              className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_15px_rgba(16,244,32,0.5)]"
+              className="relative z-10 w-full h-full object-contain"
             />
           </div>
 
