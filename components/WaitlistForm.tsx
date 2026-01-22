@@ -160,6 +160,37 @@ export default function WaitlistForm() {
                 <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Status</p>
                 <p className="font-mono text-brand">VERIFIED</p>
               </div>
+
+              {/* Referral Section */}
+              <div className="pt-4 border-t border-white/10 mt-6">
+                <p className="text-sm text-gray-400 mb-2">Boost your spot</p>
+                <div className="flex flex-col gap-3">
+                   <div className="bg-black/40 p-3 rounded-lg border border-white/10 font-mono text-xs text-gray-300 break-all select-all cursor-pointer hover:bg-black/60 transition-colors"
+                        onClick={() => {
+                          const url = `${window.location.origin}?ref=${session?.user?.name}`;
+                          navigator.clipboard.writeText(url);
+                          // Optional: Show toast
+                        }}
+                   >
+                      {typeof window !== 'undefined' ? `${window.location.host}?ref=${session?.user?.name}` : 'tap.abc...'}
+                   </div>
+                   
+                   <button
+                     onClick={() => {
+                       const text = `I just joined the Alpha waitlist for Project Tap. \n\nSecure your spot now: ${window.location.origin}?ref=${session?.user?.name}`;
+                       const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                       window.open(url, '_blank');
+                     }}
+                     className="w-full py-3 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition-all flex items-center justify-center gap-2"
+                   >
+                     {/* X Logo Small */}
+                     <svg viewBox="0 0 24 24" aria-hidden="true" className="w-4 h-4 fill-black">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                     </svg>
+                     Share to Boost
+                   </button>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
